@@ -13,6 +13,6 @@ def sendMessage(mess):
 
 if __name__ == '__main__':
     #for i in reList(opening()):# outputs the groupme messages
-    for i in rr(pd(op(23))):
+    for i in rr(pd(op(230))):
         sendMessage(i)
         print(i)
