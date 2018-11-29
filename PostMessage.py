@@ -31,8 +31,8 @@ if __name__ == '__main__':
     #x = rr(pd(op(499)))
     a = 1
     #the for loop is able to use both requests post and subprocess curl post. Do not recommend using both at the same time!!
-    # SubProccesing is recommend for posting fast messages to the bot.
-    # request posts are a bit slower.
+    # SubProccesing is recommend for posting fast messages to the bot but not all messages post.
+    # request posts are a bit slower but all the messages post.
     for i in rr(pd(op(100))):
         #smRequestPost(i)
         smSubProcces(i)
