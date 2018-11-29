@@ -102,9 +102,10 @@ def returnRate(in_data):#checks the return rate of every
 
 def sbeTime():
     return('--- StockBackEnd took: {0} seconds ---'.format(time.time() - start_time))
-        
+## rather than running the code using the message post it is best to test certain functions
+## Using the name == main function
 #if __name__ == '__main__':
     #returnRate(pc_data(opening(499)))
 #    returnRate(pc_data(opening(130)))
-#    print("--- %s seconds ---" % (time.time() - start_time))
+#    print(sbeTime())
     
