@@ -39,6 +39,7 @@ if __name__ == '__main__':
     # SubProccesing is recommend for posting fast messages to the bot but not all messages post.
     # request posts are a bit slower but all the messages post.
     for i in rr(pd(op(100))):
+        i = "{0} {1}".format(a, i)
         #smRequestPost(i)
         smSubProcces(i)
         print(a, i)
