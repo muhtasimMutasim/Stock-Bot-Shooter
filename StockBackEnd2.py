@@ -21,6 +21,7 @@ def smRequestPost(mess):
         time.sleep(1)
         return(message)
 #this function gives the option of subprocessing or execution through the terminal
+
 def smSubProcces(mess):
     groupMeID = str('') #insert Group Me ID
     m = urllib.parse.quote_plus(mess, safe='_.-~')
