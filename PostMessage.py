@@ -6,25 +6,30 @@ from StockBackEnd import pc_data as pd
 from StockBackEnd import sbeTime as t
 
 start_time = time.time()
+response = r.get("https://api.groupme.com/v3/bots/post")
 
 #this function gives the option of request posting to the url
 def smRequestPost(mess):
-    response = r.get("https://api.groupme.com/v3/bots/post")
     groupMeID = str('')#insert Group Me ID
     p_params = { 'bot_id' : groupMeID, 'text': str(mess)}
     message = r.post("https://api.groupme.com/v3/bots/post", params = p_params)
     if (response.status_code == 200):
         return(message)
     else:
-        time.sleep(1)
-        return(message)
+        time.sleep(.5)
+        if (response.status_code == 200):
+            return(message)
     
 #this function gives the option of subprocessing or execution through the terminal
 def smSubProcces(mess):
     groupMeID = str('') #insert Group Me ID
     m = urllib.parse.quote_plus(mess, safe='_.-~')
     command = 'curl -X POST \"https://api.groupme.com/v3/bots/post?bot_id='+ groupMeID +'&text=' + m + '\"'
-    return(subprocess.run(command))
+    if (response.status_code == 200):
+        return(subprocess.run(command))
+    else:
+        time.sleep(.5)
+        return(subprocess.run(command))
 
 if __name__ == '__main__':
     # outputs the groupme messages
