@@ -39,6 +39,8 @@ if __name__ == '__main__':
     # SubProccesing is recommend for posting fast messages to the bot but not all messages post.
     # request posts are a bit slower but all the messages post.
     for i in rr(pd(op(100))):
+        # prints out a number making it easier to check for companies that did not show
+        #up in the messenger
         i = "{0} {1}".format(a, i)
         #smRequestPost(i)
         smSubProcces(i)
