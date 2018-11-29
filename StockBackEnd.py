@@ -101,7 +101,7 @@ def returnRate(in_data):#checks the return rate of every
 ##### this function if executed tests the file and times the execution of the file #####
 
 def sbeTime():
-    print("--- StockBackEnd took: %s seconds ---" % (time.time() - start_time))
+    return('--- StockBackEnd took: {0} seconds ---'.format(time.time() - start_time))
         
 #if __name__ == '__main__':
     #returnRate(pc_data(opening(499)))
