@@ -1,12 +1,10 @@
-import time
-import os
-import subprocess
-import urllib
+import time, os, subprocess, urllib;
 import requests as r
 from StockBackEnd import opening as op
 from StockBackEnd import returnRate as rr
 from StockBackEnd import pc_data as pd
 from StockBackEnd import sbeTime as t
+
 start_time = time.time()
 
 #this function gives the option of request posting to the url
