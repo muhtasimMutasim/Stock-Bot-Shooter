@@ -6,39 +6,31 @@ from StockBackEnd import pc_data as pd
 from StockBackEnd import sbeTime as t
 
 start_time = time.time()
-response = r.get("https://api.groupme.com/v3/bots/post")
 
 #this function gives the option of request posting to the url
 def smRequestPost(mess):
     groupMeID = str('')#insert Group Me ID
     p_params = { 'bot_id' : groupMeID, 'text': str(mess)}
     message = r.post("https://api.groupme.com/v3/bots/post", params = p_params)
-    if (response.status_code == 200):
-        return(message)
-    else:
-        time.sleep(.5)
-        if (response.status_code == 200):
-            return(message)
-    
+    return(message)
+        
 #this function gives the option of subprocessing or execution through the terminal
 def smSubProcces(mess):
     groupMeID = str('') #insert Group Me ID
     m = urllib.parse.quote_plus(mess, safe='_.-~')
     command = 'curl -X POST \"https://api.groupme.com/v3/bots/post?bot_id='+ groupMeID +'&text=' + m + '\"'
-    if (response.status_code == 200):
-        return(subprocess.run(command))
-    else:
-        time.sleep(.5)
-        return(subprocess.run(command))
+    return(subprocess.run(command))
+
+'''#the for loop is able to use both requests post and subprocess curl post. Do not recommend using both at the same time!!
+    # SubProccesing is recommend for posting fast messages to the bot but not all messages post.
+    # request posts are a bit slower but all the messages post.
+  '''
 
 if __name__ == '__main__':
     # outputs the groupme messages
     #x = rr(pd(op(499)))
     a = 1
-    #the for loop is able to use both requests post and subprocess curl post. Do not recommend using both at the same time!!
-    # SubProccesing is recommend for posting fast messages to the bot but not all messages post.
-    # request posts are a bit slower but all the messages post.
-    for i in rr(pd(op(100))):
+        for i in rr(pd(op(100))):
         # prints out a number making it easier to check for companies that did not show
         #up in the messenger
         i = "{0} {1}".format(a, i)
